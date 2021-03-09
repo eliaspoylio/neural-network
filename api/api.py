@@ -12,9 +12,9 @@ def sigmoid(x):
     sigmoid = 1 / (1 * np.exp(-nr))
     return { 'sigmoid': sigmoid }
 
-@app.route('/perceptron/<i>')
+@app.route('/perceptron_test/<i>')
 def perceptroniterations(i):
     result = train(int(i))
     lists = result.tolist()
     json_str = json.dumps(lists)
-    return json_str
+    return { 'output': json_str }
